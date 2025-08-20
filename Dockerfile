@@ -1,5 +1,5 @@
 # Use Node.js 18 Alpine as base image
-FROM node:18-alpine
+FROM node:18-alpine AS builder
 
 # Set working directory
 WORKDIR /app
@@ -7,8 +7,8 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production
+# Install all dependencies (including dev) for build
+RUN npm ci
 
 # Copy source code
 COPY . .
@@ -16,8 +16,16 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Install serve to serve static files
-RUN npm install -g serve
+FROM node:18-alpine AS runner
+
+# Set working directory
+WORKDIR /app
+
+# Install curl for healthchecks and serve to host static site
+RUN apk add --no-cache curl && npm install -g serve
+
+# Copy only the built assets
+COPY --from=builder /app/dist ./dist
 
 # Expose port 3000
 EXPOSE 3000
