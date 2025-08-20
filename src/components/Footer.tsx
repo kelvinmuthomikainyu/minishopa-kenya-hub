@@ -8,6 +8,7 @@ import {
   Instagram,
   Phone
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const footerSections = [
@@ -102,12 +103,28 @@ const Footer = () => {
                 <ul className="space-y-2">
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <a 
-                        href="#" 
-                        className="text-sm text-background/70 hover:text-background transition-colors"
-                      >
-                        {link}
-                      </a>
+                      {link === "Become Influencer" ? (
+                        <Link 
+                          to="/influencer/signup"
+                          className="text-sm text-background/70 hover:text-background transition-colors"
+                        >
+                          {link}
+                        </Link>
+                      ) : link === "Categories" ? (
+                        <Link 
+                          to="/products"
+                          className="text-sm text-background/70 hover:text-background transition-colors"
+                        >
+                          {link}
+                        </Link>
+                      ) : (
+                        <a 
+                          href="#" 
+                          className="text-sm text-background/70 hover:text-background transition-colors"
+                        >
+                          {link}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>

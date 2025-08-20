@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, User, Search, Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 import LocationPicker from "@/components/LocationPicker";
 
 const Navbar = () => {
@@ -8,14 +9,14 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-hero rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">MSA</span>
             </div>
             <span className="font-display font-bold text-xl text-foreground">
               Mini Shop Africa
             </span>
-          </div>
+          </Link>
 
           {/* Search Bar - Hidden on mobile */}
           <div className="hidden md:flex flex-1 max-w-md mx-8">
@@ -56,9 +57,11 @@ const Navbar = () => {
               <Menu className="w-5 h-5" />
             </Button>
 
-            <Button variant="outline" size="sm" className="hidden lg:flex mr-2">
-              Become Influencer
-            </Button>
+            <Link to="/influencer/signup">
+              <Button variant="outline" size="sm" className="hidden lg:flex mr-2">
+                Become Influencer
+              </Button>
+            </Link>
             
             <Button variant="default" size="sm" className="hidden md:flex">
               Sell on MSA
