@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, User, Search, Menu, MapPin } from "lucide-react";
+import { ShoppingCart, User, Search, Menu } from "lucide-react";
+import LocationPicker from "@/components/LocationPicker";
 
 const Navbar = () => {
   return (
@@ -28,10 +29,14 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Location */}
-          <div className="hidden lg:flex items-center space-x-1 text-sm text-muted-foreground">
-            <MapPin className="w-4 h-4" />
-            <span>Nairobi, Kenya</span>
+          {/* Location Picker */}
+          <div className="hidden lg:flex">
+            <LocationPicker />
+          </div>
+
+          {/* Mobile Location Picker */}
+          <div className="lg:hidden">
+            <LocationPicker className="mr-2" />
           </div>
 
           {/* Action Buttons */}
@@ -51,6 +56,10 @@ const Navbar = () => {
               <Menu className="w-5 h-5" />
             </Button>
 
+            <Button variant="outline" size="sm" className="hidden lg:flex mr-2">
+              Become Influencer
+            </Button>
+            
             <Button variant="default" size="sm" className="hidden md:flex">
               Sell on MSA
             </Button>

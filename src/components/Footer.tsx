@@ -29,7 +29,7 @@ const Footer = () => {
         "Seller Dashboard",
         "Upload Products",
         "Seller Support",
-        "Community Groups",
+        "Become Influencer",
         "Success Stories"
       ]
     },
@@ -127,11 +127,11 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-sm text-background/70">
                   <Phone className="w-4 h-4" />
-                  <span>+254 700 000 000</span>
+                  <span>0706325807</span>
                 </div>
                 <div className="flex items-center space-x-3 text-sm text-background/70">
                   <Mail className="w-4 h-4" />
-                  <span>hello@minishopafrica.com</span>
+                  <span>muthomikelvin23@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3 text-sm text-background/70">
                   <MapPin className="w-4 h-4" />
