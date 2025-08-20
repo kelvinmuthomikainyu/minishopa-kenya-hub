@@ -14,6 +14,7 @@ import {
   Beef, 
   Palette 
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import farmProduceImage from "@/assets/farm-produce.jpg";
 import householdImage from "@/assets/household-items.jpg";
 
@@ -173,14 +174,16 @@ const Categories = () => {
                     </p>
                   </div>
 
-                  <Button 
-                    variant="ghost" 
-                    size="sm"
-                    className="w-full justify-between group-hover:bg-primary/5 transition-colors"
-                  >
-                    Browse
-                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  <Link to="/products">
+                    <Button 
+                      variant="ghost" 
+                      size="sm"
+                      className="w-full justify-between group-hover:bg-primary/5 transition-colors"
+                    >
+                      Browse
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </div>
               </div>
             );
@@ -189,10 +192,12 @@ const Categories = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg">
-            View All Categories
-            <ArrowRight className="w-4 h-4" />
-          </Button>
+          <Link to="/products">
+            <Button variant="outline" size="lg">
+              View All Categories
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

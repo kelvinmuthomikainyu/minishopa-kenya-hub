@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Smartphone, Clock, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-marketplace.jpg";
 
 const Hero = () => {
@@ -46,13 +47,17 @@ const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="flex-1 sm:flex-none">
-                Start Shopping
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-              <Button variant="chukua" size="lg" className="flex-1 sm:flex-none">
-                Chukua Sasa
-              </Button>
+              <Link to="/products">
+                <Button variant="hero" size="lg" className="flex-1 sm:flex-none">
+                  Start Shopping
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+              <Link to="/products">
+                <Button variant="chukua" size="lg" className="flex-1 sm:flex-none">
+                  Chukua Sasa
+                </Button>
+              </Link>
             </div>
 
             {/* Stats */}
